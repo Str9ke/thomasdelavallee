@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Delavallée - Kinésithérapeute</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Thomas Delavallée</h1>
+            <p>Kinésithérapeute à Leuze-en-Hainaut depuis 2012</p>
+            <a href="#contact" class="btn">Prendre Rendez-vous</a>
+        </div>
+    </header>
+
+    <nav id="floating-menu">
+        <ul>
+            <li><a href="#specialites">Spécialités</a></li>
+            <li><a href="#horaires">Horaires</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="specialites">
+        <h2>Nos Spécialités</h2>
+        <div class="specialites-grid">
+            <!-- Repeat this block for each specialty -->
+            <div class="specialite">
+                <img src="path_to_image.jpg" alt="Kiné du Sport">
+                <h3>Kiné du Sport</h3>
+                <p>Rééducation et prévention des blessures pour les sportifs de tous niveaux.</p>
+            </div>
+            <!-- End of block -->
+        </div>
+    </section>
+
+    <section id="horaires">
+        <h2>Horaires d'ouverture</h2>
+        <table>
+            <tr>
+                <th>Jour</th>
+                <th>Horaires</th>
+            </tr>
+            <tr>
+                <td>Lundi - Vendredi</td>
+                <td>08:00 - 19:00</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>📍 Adresse : Avenue de la Résistance, 6, Leuze-en-Hainaut</p>
+        <p>📞 Téléphone : +32 494 87 06 31</p>
+        <p>📧 Email : thomas.delavallee@gmail.com</p>
+        <div id="map"></div>
+    </section>
+
+    <script src="scripts.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

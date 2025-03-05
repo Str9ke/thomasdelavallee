@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Delavallée, kinésithérapeute à Leuze-en-Hainaut, spécialisé en kiné du sport, vertébrothérapie, thérapie manuelle, kiné respiratoire, kiné maxillo-faciale, rééducation à l'effort et à la marche.">
+    <title>Thomas Delavallée - Kinésithérapeute à Leuze-en-Hainaut</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, 
+                #ff6f61 0%,   /* Orange corail */
+                #ffcc99 30%,   /* Beige clair */
+                #ffcc99 70%,    /* Beige clair */
+                #ff5733 100%);  /* Rouge foncé */
+            background-size: 200% 200%;
+            animation: gradientAnimation 20s ease infinite;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
+            background-color: #ffffff; 
+            border-radius: 20px;  /* Coins très arrondis */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #f5a623;
+        }
+
+        .specialites {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .specialite {
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            background: #ffe0b3;
+            border-radius: 15px; /* Coins arrondis */
+            text-align: center;
+            border: 2px solid #f5a623;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .specialite img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .specialite h3 {
+            color: #e85d04;
+        }
+
+        .section {
+            margin: 50px 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-left: 8px solid #ff5733;  /* Séparation colorée */
+            border-right: 8px solid #ff5733;
+            border-radius: 15px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #f5a623;
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff5733;
+            color: white;
+        }
+
+        .map {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            border: 2px solid #ff5733;
+        }
+
+        /* Menu flottant */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ff5733;
+            font-size: 20px;
+            margin: 0 25px;
+            padding: 12px;
+        }
+
+        nav a:hover {
+            background-color: #f5a623;
+            color: white;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 16px;
+            }
+        }
+
+        .spacer {
+            margin-top: 80px; /* Espace pour le menu flottant */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu flottant -->
+    <nav>
+        <ul>
+            <li><a href="#specialites">Spécialités</a></li>
+            <li><a href="#horaires">Horaires</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#map">Localisation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container spacer">
+        <h1>Thomas Delavallée - Kinésithérapeute</h1>
+        <p>Kinésithérapeute à Leuze-en-Hainaut depuis 2012, spécialisé en :</p>
+
+        <div id="specialites" class="specialites">
+            <div class="specialite">
+                <img src="sport.jpg" alt="Kiné du sport">
+                <h3>Kiné du sport</h3>
+                <p>Rééducation et prévention des blessures pour les sportifs de tous niveaux.</p>
+            </div>
+            <div class="specialite">
+                <img src="vertebro.jpg" alt="Vertébrothérapie">
+                <h3>Vertébrothérapie</h3>
+                <p>Traitement des douleurs vertébrales et amélioration de la posture.</p>
+            </div>
+            <div class="specialite">
+                <img src="marche.jpg" alt="Rééducation à la marche">
+                <h3>Rééducation à la marche</h3>
+                <p>Restauration de la mobilité et de l'équilibre après une blessure ou un AVC.</p>
+            </div>
+             <div class="specialite">
+                <img src="respiratoire.jpg" alt="Kiné respiratoire">
+                <h3>Kiné respiratoire</h3>
+                <p>Prise en charge des affections respiratoires chez l’enfant et l’adulte.</p>
+            </div> 
+            <div class="specialite">
+                <img src="manuelle.jpg" alt="Thérapie manuelle">
+                <h3>Thérapie manuelle</h3>
+                <p>Techniques de manipulation pour restaurer la mobilité et réduire la douleur.</p>
+            </div>
+            <div class="specialite">
+                <img src="maxillo.jpg" alt="Kiné maxillo-faciale">
+                <h3>Kiné maxillo-faciale</h3>
+                <p>Rééducation des troubles de la mâchoire et des tensions faciales.</p>
+            </div>
+            <div class="specialite">
+                <img src="effort.jpg" alt="Rééducation à l'effort">
+                <h3>Rééducation à l'effort</h3>
+                <p>Programmes de réhabilitation pour retrouver l’endurance et la force.</p>
+            </div>
+        
+            <div class="specialite">
+                <img src="drainage.jpg" alt="Drainage lymphatique">
+                <h3>Drainage lymphatique</h3>
+                <p>Technique de massage doux visant à stimuler la circulation.</p>
+            </div>
+        </div>
+
+        <div id="horaires" class="section">
+            <h2>Horaires d'ouverture</h2>
+            <table>
+                <tr>
+                    <th>Jour</th>
+                    <th>Horaires</th>
+                </tr>
+                <tr>
+                    <td>Lundi - Vendredi</td>
+                    <td>08:00 - 19:00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>📍 Adresse : Avenue de la Résistance, 6, Leuze-en-Hainaut</p>
+            <p>📞 Téléphone : <a href="tel:+32494870631">+32 494 87 06 31</a></p>
+            <p>📧 Email : <a href="mailto:thomas.delavallee@gmail.com">thomas.delavallee@gmail.com</a></p>
+        </div>
+
+        <div id="map" class="map">
+            <h2>Localisation</h2>
+            <iframe 
+                width="100%" 
+                height="500" 
+                frameborder="0" 
+                style="border:0" 
+                allowfullscreen=""
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0899739115084!2d3.617373476451633!3d50.605193371637146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2dd8290e71e51%3A0x6e414dbdd408f31b!2sAvenue%20de%20la%20R%C3%A9sistance%206%2C%207900%20Leuze-en-Hainaut!5e0!3m2!1sfr!2sbe!4v1700000000000"></iframe>
+        </div>
+    </div>
+</body>
+</html>

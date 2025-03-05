@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Delavallée - Kinésithérapeute</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0d47a1, #42a5f5);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .menu li {
+            margin: 0 15px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            color: #42a5f5;
+        }
+        .btn-rdv {
+            background: #42a5f5;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn-rdv:hover {
+            background: black;
+            color: white;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+            margin-top: 60px; /* Pour éviter que le menu ne couvre le contenu */
+        }
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .specialites-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 1200px; /* Limite la largeur pour éviter l'étirement */
+            margin: 0 auto; /* Centre le conteneur */
+        }
+        .specialite {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .specialite:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        #horaires, #contact, #adresse, #avis {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .phone-highlight {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+        #avis {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .avis-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .avis {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .avis strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* Tableau des horaires */
+        .horaires-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        th {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        td {
+            font-size: 16px;
+        }
+        tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+        .closed {
+            color: #ff6b6b; /* Rouge pour les jours fermés */
+            font-weight: bold;
+        }
+
+        /* Section Honoraires */
+        #honoraires {
+            background: rgba(0, 123, 255, 0.1); /* Couleur distincte pour les honoraires */
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .honoraires-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        #honoraires table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        #honoraires th, #honoraires td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+        #honoraires th {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #honoraires td {
+            font-size: 16px;
+        }
+        #honoraires ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        #honoraires ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive pour les écrans plus petits */
+        @media (max-width: 768px) {
+            .specialites-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .specialites-container {
+                grid-template-columns: 1fr; /* 1 colonne sur très petits écrans */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#specialites">Spécialités</a></li>
+                <li><a href="#honoraires">Honoraires</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#contact" class="btn-rdv">Prendre rendez-vous</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Thomas Delavallée</h1>
+            <p>Kinésithérapeute à Leuze-en-Hainaut depuis 2012</p>
+            <p class="phone-highlight">📞  <a href="tel:+32494870631" style="color: white; text-decoration: none;">+32 494 87 06 31</a></p>
+        </div>
+    </header>
+
+    <section id="specialites">
+        <h2>Nos Spécialités</h2>
+        <div class="specialites-container">
+            <div class="specialite"><img src="sport.jpg" alt="Kiné du sport">Kiné du sport</div>
+            <div class="specialite"><img src="vertebro.jpg" alt="Vertébrothérapie">Vertébrothérapie</div>
+            <div class="specialite"><img src="Osteo.jpg" alt="Thérapie manuelle">Thérapie manuelle</div>
+            <div class="specialite"><img src="Respi.jpg" alt="Kiné respiratoire">Kiné respiratoire</div>
+            <div class="specialite"><img src="maxillo.jpg" alt="Kiné maxillo-faciale">Kiné maxillo-faciale</div>
+            <div class="specialite"><img src="effort.jpg" alt="Rééducation à l'effort">Rééducation à l'effort</div>
+            <div class="specialite"><img src="marche.jpg" alt="Rééducation à la marche">Rééducation à la marche</div>
+            <div class="specialite"><img src="drainage.jpg" alt="Drainage lymphatique">Drainage lymphatique</div>
+        </div>
+    </section>
+
+    <section id="honoraires">
+        <h2>Honoraires</h2>
+        <div class="honoraires-container">
+            <p>Je suis <strong>conventionné</strong>, ce qui signifie que les séances de kinésithérapie sont remboursées par la mutuelle selon les conditions de votre assurance.</p>
+            <h3>Tableau des honoraires</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type de prestation</th>
+                        <th>Honoraires (€)</th>
+                        <th>Remboursement patient ordinaire (€)</th>
+                        <th>Remboursement BIM (€)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Au cabinet</td>
+                        <td>30,80</td>
+                        <td>24.55</td>
+                        <td>28.30</td>
+                    </tr>
+                    <tr>
+                        <td>À domicile</td>
+                        <td>33.88</td>
+                        <td>27.63</td>
+                        <td>31.38</td>
+                    </tr>
+                    <tr>
+                        <td>Frais de dossier (pathologie normale)</td>
+                        <td>7.19</td>
+                        <td>7.19</td>
+                        <td>7.19</td>
+                    </tr>
+                    <tr>
+                        <td>Frais de dossier (pathologie lourde)</td>
+                        <td>30.65</td>
+                        <td>30.65</td>
+                        <td>30.65</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3> </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Traitement</th>
+                        <th>Avantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cas standards</strong></td>
+                        <td>
+                            <ul>
+                                <li>18 séances par an remboursées.</li>
+                                <li>+ 18 séances supplémentaires en cas de nouvelle pathologie pendant l'année.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pathologie chronique ou aigüe (Fa-Fb)</strong></td>
+                        <td>
+                            <ul>
+                                <li>60 séances par an remboursées.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pathologie lourde (E)</strong></td>
+                        <td>
+                            <ul>
+                                <li>Nombre illimité de séances remboursées.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="avis">
+        <h2>Avis de Mes patients</h2>
+        <div class="avis-container">
+            <!-- Les avis seront insérés ici -->
+        </div>
+    </section>
+
+    <section id="horaires">
+        <h2>Horaires d'ouverture</h2>
+        <div class="horaires-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jour</th>
+                        <th>Heures d'ouverture</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lundi</td>
+                        <td>08:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Mardi</td>
+                        <td>08:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Mercredi</td>
+                        <td>08:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Jeudi</td>
+                        <td>08:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Vendredi</td>
+                        <td>08:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Samedi</td>
+                        <td class="closed">Fermé</td>
+                    </tr>
+                    <tr>
+                        <td>Dimanche</td>
+                        <td class="closed">Fermé</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>📍 Adresse : Avenue de la Résistance, 6, 7900 Leuze-en-Hainaut</p>
+        <p>📞 Téléphone : <a href="tel:+32494870631" style="color: white; text-decoration: none;">+32 494 87 06 31</a></p>
+        <p>📧 Email : thomas.delavallee@gmail.com</p>
+    </section>
+
+    <section id="adresse">
+        <h2>Mon emplacement</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+</body>
+</html>
