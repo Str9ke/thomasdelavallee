@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kineleuze-thomasdelavallee.be/sitemap.xml
