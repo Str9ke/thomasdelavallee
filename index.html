@@ -120,6 +120,7 @@
       font-weight: bold;
       min-width: 140px;
       text-align: center;
+      cursor: pointer;
     }
     
     /* Hero Section */
@@ -150,6 +151,7 @@
       border-radius: 5px;
       font-size: 1.1em;
       font-weight: bold;
+      cursor: pointer;
     }
     
     /* Main content */
@@ -280,16 +282,6 @@
       padding: 40px 5%;
     }
     .contact p { font-size: 1.1em; margin: 10px 0; }
-    .btn-rdv-contact {
-      background: #F97316;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-      font-weight: bold;
-      margin-top: 15px;
-      display: inline-block;
-    }
     
     /* Section Adresse & Google Map */
     .map-section {
@@ -348,6 +340,15 @@
     .faq-item table th {
       background-color: #e2efff;
       color: #333;
+    }
+    
+    /* Animation de clignotement sur le texte du numéro */
+    @keyframes blinkText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .blink {
+      animation: blinkText 1s ease-in-out 3;
     }
     
     /* Footer */
@@ -506,14 +507,14 @@
       <h2>Contactez-moi</h2>
       <p><strong>Téléphone :</strong> <a href="tel:+32494870631" style="font-size:1.3em; color:#F97316;">+32 494 87 06 31</a></p>
       <p><strong>Adresse :</strong> Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
-      <a href="#contact" class="btn-rdv-contact">Prendre Rendez-vous</a>
+      <a href="#contact" class="btn-rdv-hero">Prendre Rendez-vous</a>
     </section>
     
     <!-- Section Adresse & Google Map -->
     <section class="map-section">
       <h2>Localisation</h2>
       <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!5e0!3m2!1sfr!2sbe!4v1690000000000!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
     </section>
     
     <!-- Section FAQ -->
@@ -564,6 +565,29 @@
       </div>
     </section>
   </main>
+  
+  <!-- Script pour activer le clignotement sur le numéro de téléphone -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Sélectionne tous les boutons "Prendre Rendez-vous" dans le menu et la section Hero
+      var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header');
+      rdvButtons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          // Attendre 500ms pour laisser le temps au scroll vers la section contact
+          setTimeout(function() {
+            var telElement = document.querySelector('a[href^="tel:"]');
+            if (telElement) {
+              telElement.classList.add("blink");
+              // Retirer la classe après 3 secondes
+              setTimeout(function(){
+                telElement.classList.remove("blink");
+              }, 3000);
+            }
+          }, 500);
+        });
+      });
+    });
+  </script>
   
   <!-- Footer -->
   <footer>
