@@ -302,6 +302,39 @@
       border: 0;
     }
     
+    /* Section Avis / Témoignages */
+    .testimonials {
+      background: #fff;
+      padding: 40px 5%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #0077cc;
+    }
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .testimonial {
+      background: #eef5ff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 300px;
+      font-style: italic;
+    }
+    .testimonial .author {
+      font-size: 0.95em;
+      font-weight: bold;
+      color: #0077cc;
+      margin-top: 10px;
+    }
+    
     /* Section FAQ */
     .faq {
       background: #f0f8ff;
@@ -515,6 +548,25 @@
       <h2>Localisation</h2>
       <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <!-- Section Avis / Témoignages -->
+    <section class="testimonials" id="testimonials">
+      <h2>Avis de mes patients</h2>
+      <div class="testimonial-container">
+        <div class="testimonial">
+          <p class="quote">"Un très bon professionnel kiné, compétent. A l'écoute, gentillesse."</p>
+          <p class="author">— Isabelle</p>
+        </div>
+        <div class="testimonial">
+          <p class="quote">"Kiné très professionnel, attentif au suivi de ses patients."</p>
+          <p class="author">— Christine</p>
+        </div>
+        <div class="testimonial">
+          <p class="quote">"Très professionnel, sympathique. De bon conseil pour la rééducation. Étape par étape."</p>
+          <p class="author">— John</p>
+        </div>
+      </div>
     </section>
     
     <!-- Section FAQ -->
