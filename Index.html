@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut. Expertise en kinésithérapie sportive, rhumatologie, vertebrothérapie, thérapie manuelle et autres soins depuis 2012.">
+  <meta name="keywords" content="kiné Leuze-en-Hainaut, kinésithérapeute Leuze, kiné sportive, rééducation, thérapie manuelle, fasciathérapie, rhumatologie, vertebrothérapie, post-opératoire, kiné respiratoire">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Balise Canonical -->
+  <link rel="canonical" href="https://kineleuze-thomasdelavallee.be/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
+  <meta property="og:description" content="Expertise en kinésithérapie sportive, rhumatologie, vertebrothérapie, thérapie manuelle et autres soins depuis 2012.">
+  <meta property="og:image" content="https://kineleuze-thomasdelavallee.be/path/to/your-image.jpg">
+  <meta property="og:url" content="https://kineleuze-thomasdelavallee.be/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
+  <meta name="twitter:description" content="Expertise en kinésithérapie sportive, rhumatologie, vertebrothérapie, thérapie manuelle et autres soins depuis 2012.">
+  <meta name="twitter:image" content="https://kineleuze-thomasdelavallee.be/path/to/your-image.jpg">
+  
+  <!-- JSON-LD Structured Data pour MedicalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Thomas Delavallée - Kinésithérapeute",
+    "image": "https://kineleuze-thomasdelavallee.be/path/to/your-logo.jpg",
+    "telephone": "+32494870631",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenue de la Résistance 6",
+      "addressLocality": "Leuze-en-Hainaut",
+      "postalCode": "7900",
+      "addressCountry": "BE"
+    },
+    "url": "https://kineleuze-thomasdelavallee.be",
+    "priceRange": "30",
+    "openingHours": "Mo-Fr 08:00-19:00",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "23"
+    }
+  }
+  </script>
+  
+  <!-- JSON-LD Structured Data pour le site Web -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut",
+    "url": "https://kineleuze-thomasdelavallee.be/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://kineleuze-thomasdelavallee.be/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <title>Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut</title>
+  <style>
+    /* Réinitialisation et styles globaux */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Titres uniformes pour toutes les sections */
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077cc;
+      font-size: 2em;
+      font-weight: bold;
+      width: 100%;
+      line-height: 1.2;
+    }
+    
+    /* Header - Menu fixe */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1E3A8A;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+      padding: 10px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-name {
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .header-name span {
+      display: block;
+      font-size: 0.7em;
+      color: #cbd5e1;
+    }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { font-weight: bold; color: #fff; }
+    @media (max-width: 768px) {
+      nav a.hide-small { display: none; }
+      .btn-rdv-header { font-size: 0.9em; padding: 8px 16px; }
+      nav { gap: 10px; }
+    }
+    .btn-rdv-header {
+      background: #F97316;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      min-width: 140px;
+      text-align: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: #eef7ff;
+      padding: 100px 5%;
+      margin-top: 70px;
+      text-align: center;
+      color: #333;
+    }
+    .hero h1 { 
+      font-size: 2.8em; 
+      margin-bottom: 10px; 
+      line-height: 1.2;
+    }
+    .hero h1 br { display: block; }
+    .hero p { font-size: 1.3em; margin-bottom: 25px; }
+    .hero .subheadline { 
+      font-size: 1.6em; 
+      margin: 20px 0; 
+      font-weight: bold; 
+      color: #0077cc; 
+    }
+    .btn-rdv-hero {
+      background: #F97316;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    
+    /* Main content */
+    main { margin-top: 70px; }
+    
+    /* Section MON APPROCHE */
+    .approach {
+      background: #fff;
+      padding: 60px 5%;
+      margin-bottom: 20px;
+    }
+    .approach ul {
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .approach ul li {
+      font-size: 1.1em;
+      margin: 10px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+    .approach ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5em;
+      color: #F97316;
+      line-height: 1;
+    }
+    
+    /* Section Spécialités */
+    .specialties-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 0 5%;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .specialty-card {
+      background: #f9f9f9;
+      width: 280px;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .specialty-card:hover { transform: scale(1.03); }
+    .specialty-card .icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 10px;
+      background: #F97316;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .specialty-card h3 { margin-bottom: 10px; font-size: 1.2em; color: #333; }
+    .specialty-card p { font-size: 0.95em; color: #666; }
+    /* Pour Problèmes de Dos */
+    .specialty-card.dos .icon {
+      padding: 0;
+    }
+    .specialty-card.dos .icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      aria-label="Tronc de squelette";
+      title="Problèmes de Dos";
+    }
+    /* Pour Post-Opératoire */
+    .specialty-card.postop .icon {
+      padding: 0;
+    }
+    .specialty-card.postop .icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      aria-label="Logo post-opératoire (plâtre)";
+      title="Post-Opératoire";
+    }
+    
+    /* Section Infos Pratiques */
+    .info-pratiques {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .info-card {
+      background: #eef5ff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .info-card .icon {
+      width: 50px;
+      height: 50px;
+      background: #0077cc;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .info-card p { font-size: 1em; margin: 0; text-align: left; }
+    
+    /* Section Contact */
+    .contact {
+      background: #EFF6FF;
+      text-align: center;
+      padding: 40px 5%;
+    }
+    .contact p { font-size: 1.1em; margin: 10px 0; }
+    .btn-rdv-contact {
+      background: #F97316;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+    }
+    
+    /* Section Adresse & Google Map */
+    .map-section {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Ratio 16:9 */
+      height: 0;
+      overflow: hidden;
+      margin: 20px auto;
+      background: #fff;
+    }
+    .map-section iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    /* Section FAQ */
+    .faq {
+      background: #f0f8ff;
+      padding: 40px 5%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .faq h2 {
+      margin-bottom: 30px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+    .faq-item h3 {
+      font-size: 1.5em;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .faq-item table {
+      width: 100%;
+      min-width: 600px;
+      max-width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    .faq-item table th, .faq-item table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-size: 0.95em;
+    }
+    .faq-item table th {
+      background-color: #e2efff;
+      color: #333;
+    }
+    
+    /* Footer */
+    footer {
+      background: #1E3A8A;
+      color: #fff;
+      text-align: center;
+      padding: 20px 5%;
+    }
+    footer nav { margin-bottom: 10px; }
+    footer nav a { color: #fff; margin: 0 10px; font-size: 0.9em; }
+    footer p { font-size: 0.9em; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2em; }
+      .hero p { font-size: 1em; }
+      .info-pratiques { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF2LDM8P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <header>
+    <div class="header-name">
+      <span>Kiné Leuze</span>
+      Thomas Delavallée
+    </div>
+    <nav>
+      <a href="#specialties" class="hide-small">Spécialités</a>
+      <a href="#info" class="hide-small">Infos Pratiques</a>
+    </nav>
+    <a href="#contact" class="btn-rdv-header">Prendre Rendez-vous</a>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+      <h1>Thomas Delavallée Kinésithérapeute<br>Leuze-en-Hainaut</h1>
+      <p class="subheadline">RETROUVEZ VOTRE LIBERTÉ</p>
+      <p>
+        Expertise en kinésithérapie sportive, rhumatologie, vertébrothérapie et thérapie manuelle depuis 2012.
+        Je m'engage à vous offrir un suivi personnalisé pour une récupération optimale et à vous fournir des informations claires sur vos affections et le programme de récupération.
+        Mon objectif est de vous accompagner vers une meilleure qualité de vie.
+      </p>
+      <a href="#contact" class="btn-rdv-hero">Prendre Rendez-vous</a>
+    </section>
+    
+    <!-- Section MON APPROCHE -->
+    <section class="approach" id="approach">
+      <h2>Mon Approche</h2>
+      <ul>
+        <li><strong>Récupération optimale :</strong> Protocoles basés sur les dernières avancées scientifiques.</li>
+        <li><strong>Information claire :</strong> Compréhension précise de votre condition et accompagnement sur mesure.</li>
+        <li><strong>Suivi personnalisé :</strong> Plan thérapeutique adapté à vos objectifs, avec suivi pour un retour à la normale ou vers la performance.</li>
+        <li><strong>Salle de sport à disposition :</strong> Pour favoriser la rééducation et le renforcement.</li>
+      </ul>
+    </section>
+    
+    <!-- Section Spécialités -->
+    <section id="specialties">
+      <h2>Spécialités</h2>
+      <div class="specialties-container">
+        <div class="specialty-card">
+          <div class="icon" aria-label="Kiné Sportive" title="Kiné Sportive">⚽</div>
+          <h3>Kiné Sportive</h3>
+          <p>Tendinites, entorses, fractures, contractures musculaires, etc.</p>
+        </div>
+        <div class="specialty-card dos">
+          <div class="icon" aria-label="Tronc de squelette" title="Problèmes de Dos">
+            <!-- SVG représentant un tronc de squelette -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="12" y1="3" x2="12" y2="21" stroke="white" stroke-width="2"/>
+              <line x1="9" y1="6" x2="15" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9" y1="12" x2="15" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9" y1="18" x2="15" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Problèmes de Dos</h3>
+          <p>Cervicalgies, lombalgies, dorsalgies, sciatalgies, posture, scoliose, etc.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Rééducation à la Marche" title="Rééducation à la Marche">🚶‍♂️</div>
+          <h3>Rééducation à la Marche</h3>
+          <p>Programmes personnalisés pour retrouver l’équilibre et l’autonomie, spécialement pour seniors et patients neurologiques.</p>
+        </div>
+        <div class="specialty-card postop">
+          <div class="icon" aria-label="Logo Post-Opératoire (plâtre)" title="Post-Opératoire">
+            <!-- SVG représentant un plâtre -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect x="3" y="9" width="18" height="6" rx="2" ry="2" fill="white" />
+              <line x1="8" y1="12" x2="16" y2="12" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Post-Opératoire</h3>
+          <p>Soins post-chirurgicaux : suivi après prothèses, fractures, accidents, etc.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Kiné Respiratoire" title="Kiné Respiratoire">🫁</div>
+          <h3>Kiné Respiratoire</h3>
+          <p>Bronchite chronique, bronchiolite, récupération de la capacité pulmonaire.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Maxillo-Faciale" title="Maxillo-Faciale">😊</div>
+          <h3>Maxillo-Faciale</h3>
+          <p>Maux de tête, problèmes de mâchoire, etc.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Réentrainement à l'effort" title="Réentrainement à l'effort">🏋️‍♂️</div>
+          <h3>Réentrainement à l'effort</h3>
+          <p>Programmes sur mesure pour retrouver l'autonomie, reprendre une activité physique ou améliorer les performances sportives par le travail musculaire et l'endurance.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Thérapie Manuelle" title="Thérapie Manuelle">🤲</div>
+          <h3>Thérapie Manuelle</h3>
+          <p>Techniques manuelles pour rétablir la mobilité articulaire et soulager les tensions.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="icon" aria-label="Fasciathérapie" title="Fasciathérapie">🌀</div>
+          <h3>Fasciathérapie</h3>
+          <p>Approche douce pour améliorer la mobilité et la souplesse des fascias.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Infos Pratiques -->
+    <section class="info-pratiques" id="info">
+      <h2>Infos Pratiques</h2>
+      <div class="info-card">
+        <div class="icon" aria-label="Horaires" title="Horaires">⏰</div>
+        <p><strong>Horaires :</strong> du Lundi au Vendredi, 8h - 19h.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon" aria-label="Parking" title="Parking">🅿️</div>
+        <p><strong>Parking :</strong> Parking facile en face du cabinet pour un accès rapide et sans stress.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon" aria-label="Salle de Sport" title="Salle de Sport">🏋️</div>
+        <p><strong>Salle de Sport :</strong> Une petite salle de sport sur place pour vos séances de rééducation et de renforcement.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon" aria-label="Déplacements" title="Déplacements">🏠</div>
+        <p><strong>Déplacements :</strong> Soins à domicile possibles en cas d'incapacité de se déplacer.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon" aria-label="Conventionné" title="Conventionné">✅</div>
+        <p><strong>Conventionné :</strong> Cabinet conventionné, tiers-payant possible.</p>
+      </div>
+    </section>
+    
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+      <h2>Contactez-moi</h2>
+      <p><strong>Téléphone :</strong> <a href="tel:+32494870631" style="font-size:1.3em; color:#F97316;">+32 494 87 06 31</a></p>
+      <p><strong>Adresse :</strong> Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
+      <a href="#contact" class="btn-rdv-contact">Prendre Rendez-vous</a>
+    </section>
+    
+    <!-- Section Adresse & Google Map -->
+    <section class="map-section">
+      <h2>Localisation</h2>
+      <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <!-- Section FAQ -->
+    <section class="faq" id="faq">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <h3>Quel document apporter ?</h3>
+        <p>Carte d'identité, prescription médicale, examens, protocole opératoire, police d'assurance, tout ce qui peut m'aider à vous soigner.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quels tarifs ?</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Type de prestation</th>
+              <th>Honoraires (€)</th>
+              <th>Remboursement patient ordinaire (€)</th>
+              <th>Remboursement BIM (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Au cabinet</td>
+              <td>30,80</td>
+              <td>24,55</td>
+              <td>28,30</td>
+            </tr>
+            <tr>
+              <td>À domicile</td>
+              <td>33,88</td>
+              <td>27,63</td>
+              <td>31,38</td>
+            </tr>
+            <tr>
+              <td>Frais de dossier (pathologie normale)</td>
+              <td>7,19</td>
+              <td>7,19</td>
+              <td>7,19</td>
+            </tr>
+            <tr>
+              <td>Frais de dossier (pathologie lourde)</td>
+              <td>34,62</td>
+              <td>32,00</td>
+              <td>32,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="#specialties">Spécialités</a>
+      <a href="#info">Infos Pratiques</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p>© 2025 Thomas Delavallée - Kinésithérapeute | Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
+    <p><a href="tel:+32494870631" style="color: #F97316;">+32 494 870 631</a></p>
+    <p><a href="#">Mentions légales & Politique de confidentialité</a></p>
+  </footer>
+</body>
+</html>
