@@ -1,0 +1,13 @@
+# Active la réécriture d'URL
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Enlever le www devant le domaine
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Page d'erreur personnalisée (facultatif)
+ErrorDocument 404 /erreur404.html
