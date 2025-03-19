@@ -14,7 +14,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta property="og:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta property="og:image" content="https://kineleuze-thomasdelavallee.be/path/to/your-image.jpg">
+  <meta property="og:image" content="https://kineleuze-thomasdelavallee.be/squarelogo.png">
   <meta property="og:url" content="https://kineleuze-thomasdelavallee.be/">
   <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta name="twitter:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta name="twitter:image" content="https://kineleuze-thomasdelavallee.be/path/to/your-image.jpg">
+  <meta name="twitter:image" content="https://kineleuze-thomasdelavallee.be/your-square-logo.png">
   
   <!-- JSON-LD Structured Data pour MedicalBusiness -->
   <script type="application/ld+json">
@@ -30,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Thomas Delavallée - Kinésithérapeute",
-    "image": "https://kineleuze-thomasdelavallee.be/path/to/your-logo.jpg",
+    "image": "https://kineleuze-thomasdelavallee.be/your-square-logo.png",
     "telephone": "+32494870631",
     "address": {
       "@type": "PostalAddress",
@@ -66,6 +66,7 @@
   </script>
 
   <title>Thomas Delavallée - Kinésithérapeute Leuze-en-Hainaut | Kiné Leuze, kinésithérapie sportive et rééducation</title>
+  
   <style>
     /* Réinitialisation et styles globaux */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -102,18 +103,25 @@
       font-weight: bold;
       line-height: 1.2;
     }
-    .header-name span {
-      display: block;
-      font-size: 0.7em;
-      color: #cbd5e1;
+    .header-name span { display: block; font-size: 0.7em; color: #cbd5e1; }
+    
+    /* Navigation pour écrans larges et petits */
+    .nav-full, .nav-min { display: flex; gap: 20px; align-items: center; }
+    
+    /* Affichage en fonction de la taille d'écran */
+    @media (min-width: 1024px) {
+      .nav-full { display: flex; }
+      .nav-min { display: none; }
     }
-    nav { display: flex; gap: 20px; align-items: center; }
+    @media (max-width: 1023px) {
+      .nav-full { display: none; }
+      .nav-min { display: flex; }
+    }
+    
+    /* Liens de navigation en blanc et surlignés en orange au survol */
     nav a { font-weight: bold; color: #fff; }
-    @media (max-width: 768px) {
-      nav a.hide-small { display: none; }
-      .btn-rdv-header { font-size: 0.9em; padding: 8px 16px; }
-      nav { gap: 10px; }
-    }
+    nav a:hover { color: #F97316; }
+    
     .btn-rdv-header {
       background: #F97316;
       color: #fff;
@@ -223,29 +231,21 @@
     .specialty-card h3 { margin-bottom: 10px; font-size: 1.2em; color: #333; }
     .specialty-card p { font-size: 0.95em; color: #666; }
     /* Pour Problèmes de Dos */
-    .specialty-card.dos .icon {
-      padding: 0;
-    }
+    .specialty-card.dos .icon { padding: 0; }
     .specialty-card.dos .icon svg {
       width: 24px;
       height: 24px;
       fill: white;
-      aria-label="Tronc de squelette";
-      title="Problèmes de Dos";
     }
     /* Pour Post-Opératoire */
-    .specialty-card.postop .icon {
-      padding: 0;
-    }
+    .specialty-card.postop .icon { padding: 0; }
     .specialty-card.postop .icon svg {
       width: 24px;
       height: 24px;
       fill: white;
-      aria-label="Logo post-opératoire (plâtre)";
-      title="Post-Opératoire";
     }
     
-    /* Section Infos Pratiques */
+    /* Section Infos Pratiques avec effet zoom sur hover (pour écrans larges) */
     .info-pratiques {
       display: flex;
       flex-direction: column;
@@ -262,6 +262,10 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      transition: transform 0.3s;
+    }
+    @media (min-width: 1024px) {
+      .info-card:hover { transform: scale(1.03); }
     }
     .info-card .icon {
       width: 50px;
@@ -344,9 +348,7 @@
       margin-bottom: 20px;
       text-align: center;
     }
-    .faq h2 {
-      margin-bottom: 30px;
-    }
+    .faq h2 { margin-bottom: 30px; }
     .faq-item {
       margin-bottom: 20px;
       overflow-x: auto;
@@ -356,10 +358,7 @@
       color: #0077cc;
       margin-bottom: 10px;
     }
-    .faq-item p {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
+    .faq-item p { font-size: 1.1em; margin-bottom: 10px; }
     .faq-item table {
       width: 100%;
       min-width: 600px;
@@ -377,129 +376,146 @@
       color: #333;
     }
     
+    /* Section Blog (Articles Scientifiques) */
+    .blog {
+      background: #fafcff;
+      padding: 50px 5%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .blog h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #0077cc;
+    }
+    .blog .intro-blog {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .blog-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .blog-post {
+      background: #fff;
+      width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .blog-post:hover { transform: translateY(-5px); }
+    .blog-post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .blog-content { padding: 15px; }
+    .blog-content h3 {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: #0077cc;
+    }
+    .blog-content h3 a { color: inherit; text-decoration: none; }
+    .blog-date {
+      color: #999;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .blog-content p {
+      font-size: 0.95em;
+      margin-bottom: 15px;
+      color: #444;
+    }
+    .read-more {
+      color: #F97316;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .read-more:hover { color: #1E3A8A; }
+    
     /* Animation de clignotement sur le texte du numéro */
     @keyframes blinkText {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    .blink {
-      animation: blinkText 1s ease-in-out 3;
-    }
+    .blink { animation: blinkText 1s ease-in-out 3; }
     
     /* Footer optimisé SEO */
     footer {
-      background: #1E3A8A;
+      background-color: #1E3A8A;
       color: #fff;
-      text-align: center;
-      padding: 20px 5%;
+      padding: 40px 5%;
+      font-size: 0.95em;
+      line-height: 1.5;
     }
-    footer nav { margin-bottom: 10px; }
-    footer nav a { color: #fff; margin: 0 10px; font-size: 0.9em; }
-    footer p { font-size: 0.9em; }
-    footer p.seo-footer {
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .footer-column { flex: 1; min-width: 200px; }
+    .footer-column h3 {
+      margin-bottom: 15px;
+      color: #F97316;
+      font-size: 1.3em;
+    }
+    .footer-column p,
+    .footer-column ul { margin-bottom: 10px; }
+    .footer-column ul { list-style: none; padding: 0; }
+    .footer-column ul li { margin-bottom: 8px; }
+    .footer-column ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-column ul li a:hover { color: #F97316; }
+    .footer-btn-rdv {
+      display: inline-block;
+      background-color: #F97316;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .footer-btn-rdv:hover {
+      background-color: #fff;
+      color: #F97316;
+    }
+    .footer-bottom {
+      border-top: 1px solid #2c5aa0;
+      padding-top: 20px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .footer-bottom a { color: #cbd5e1; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+    .seo-footer {
       margin-top: 10px;
       font-size: 0.85em;
       font-style: italic;
     }
-    footer {
-  background-color: #1E3A8A;
-  color: #fff;
-  padding: 40px 5%;
-  font-size: 0.95em;
-  line-height: 1.5;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-}
-
-.footer-column h3 {
-  margin-bottom: 15px;
-  color: #F97316;
-  font-size: 1.3em;
-}
-
-.footer-column p,
-.footer-column ul {
-  margin-bottom: 10px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 8px;
-}
-
-.footer-column ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-  color: #F97316;
-}
-
-.footer-btn-rdv {
-  display: inline-block;
-  background-color: #F97316;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.footer-btn-rdv:hover {
-  background-color: #fff;
-  color: #F97316;
-}
-
-.footer-bottom {
-  border-top: 1px solid #2c5aa0;
-  padding-top: 20px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-.footer-bottom a {
-  color: #cbd5e1;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
-}
-
-.seo-footer {
-  font-style: italic;
-  font-size: 0.85em;
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-column {
-    margin-bottom: 20px;
-  }
-}
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2em; }
+      .hero p { font-size: 1em; }
+      .info-pratiques { padding: 20px; }
+      .blog-container { flex-direction: column; align-items: center; }
+      .blog-post { width: 90%; }
+      .footer-container { flex-direction: column; align-items: center; text-align: center; }
+      .footer-column { margin-bottom: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -507,16 +523,23 @@
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF2LDM8P" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
   
   <header>
     <div class="header-name">
       <span>Kiné Leuze</span>
       Thomas Delavallée
     </div>
-    <nav>
-      <a href="#specialties" class="hide-small">Spécialités</a>
-      <a href="#info" class="hide-small">Infos Pratiques</a>
+    <!-- Menu pour écrans larges -->
+    <nav class="nav-full">
+      <a href="#specialties">Spécialités</a>
+      <a href="#info">Infos Pratiques</a>
+      <a href="#testimonials">Avis des patients</a>
+      <a href="#blog">Articles Scientifiques</a>
+    </nav>
+    <!-- Menu minimal pour petits écrans -->
+    <nav class="nav-min">
+      <a href="#specialties">Spécialités</a>
+      <a href="#info">Infos Pratiques</a>
     </nav>
     <a href="#contact" class="btn-rdv-header">Prendre Rendez-vous</a>
   </header>
@@ -555,7 +578,6 @@
         </div>
         <div class="specialty-card dos">
           <div class="icon" aria-label="Tronc de squelette" title="Problèmes de Dos">
-            <!-- SVG représentant un tronc de squelette -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <line x1="12" y1="3" x2="12" y2="21" stroke="white" stroke-width="2"/>
               <line x1="9" y1="6" x2="15" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -573,7 +595,6 @@
         </div>
         <div class="specialty-card postop">
           <div class="icon" aria-label="Logo Post-Opératoire (plâtre)" title="Post-Opératoire">
-            <!-- SVG représentant un plâtre -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <rect x="3" y="9" width="18" height="6" rx="2" ry="2" fill="white" />
               <line x1="8" y1="12" x2="16" y2="12" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
@@ -647,7 +668,7 @@
     <section class="map-section">
       <h2>Localisation</h2>
       <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
     </section>
     
     <!-- Section Avis / Témoignages -->
@@ -716,19 +737,19 @@
         </table>
       </div>
     </section>
+    
+    <!-- Section Blog (Articles Scientifiques) -->
+     
   </main>
   
   <!-- Script pour activer le clignotement sur le numéro de téléphone -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header, .footer-btn-rdv');
-      
       rdvButtons.forEach(function(btn) {
         btn.addEventListener("click", function(e) {
-          e.preventDefault(); // empêche le saut immédiat
-          
+          e.preventDefault();
           document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-          
           setTimeout(function() {
             var telElement = document.querySelector('a[href^="tel:"]');
             if (telElement) {
@@ -741,42 +762,38 @@
         });
       });
     });
-    </script>
-    
+  </script>
   
-<footer>
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>Thomas Delavallée</h3>
-      <p>Kinésithérapeute à Leuze-en-Hainaut depuis 2012, spécialisé en kinésithérapie sportive, rééducation fonctionnelle et thérapie manuelle.</p>
-      <p><strong>Adresse :</strong><br>Avenue de la Résistance 6,<br>7900 Leuze-en-Hainaut</p>
-      <p><strong>Tél :</strong> <a href="tel:+32494870631">+32 494 870 631</a></p>
+  <!-- Footer optimisé SEO -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Thomas Delavallée</h3>
+        <p>Kinésithérapeute à Leuze-en-Hainaut depuis 2012, spécialisé en kinésithérapie sportive, rééducation fonctionnelle et thérapie manuelle.</p>
+        <p><strong>Adresse :</strong><br>Avenue de la Résistance 6,<br>7900 Leuze-en-Hainaut</p>
+        <p><strong>Tél :</strong> <a href="tel:+32494870631"><strong>+32 494 87 06 31</strong></a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Liens Rapides</h3>
+        <ul>
+          <li><a href="#specialties">Spécialités</a></li>
+          <li><a href="#info">Infos Pratiques</a></li>
+          <li><a href="#testimonials">Avis des patients</a></li>
+          <li><a href="#blog">Articles Scientifiques</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Horaires d'ouverture</h3>
+        <p>Lundi - Vendredi : 8h à 19h</p>
+        <p>Cabinet conventionné, soins à domicile possibles.</p>
+        <p><a href="#contact" class="footer-btn-rdv">Prendre Rendez-vous</a></p>
+      </div>
     </div>
-    <div class="footer-column">
-      <h3>Liens Rapides</h3>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#approach">Mon Approche</a></li>
-        <li><a href="#specialties">Spécialités</a></li>
-        <li><a href="#info">Infos Pratiques</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#testimonials">Avis des patients</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#blog">Articles Scientifiques</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 Thomas Delavallée - Kinésithérapeute Leuze-en-Hainaut</p>
+      <p class="seo-footer">kiné Leuze - kinésithérapeute Leuze-en-Hainaut - kinésithérapie sportive</p>
+      <p><a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
     </div>
-    <div class="footer-column">
-      <h3>Horaires d'ouverture</h3>
-      <p>Lundi - Vendredi : 8h à 19h</p>
-      <p>Cabinet conventionné, soins à domicile possibles.</p>
-      <p><a href="#contact" class="footer-btn-rdv">Prendre Rendez-vous</a></p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Thomas Delavallée - Kinésithérapeute Leuze-en-Hainaut</p>
-    <p class="seo-footer">kiné Leuze - kinésithérapeute Leuze-en-Hainaut - kinésithérapie sportive</p>
-    <p><a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
