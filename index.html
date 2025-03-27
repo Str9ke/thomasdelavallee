@@ -2,15 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- Meta Description optimisée avec les mots-clés -->
   <meta name="description" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation, thérapie manuelle et plus encore. Votre kiné Leuze pour retrouver votre mobilité depuis 2012.">
-  <!-- Mots-clés SEO -->
   <meta name="keywords" content="kiné Leuze, kinésithérapeute Leuze-en-Hainaut, kinésithérapie, kiné sportive, rééducation, thérapie manuelle">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://kineleuze-thomasdelavallee.be/">
   
-  <!-- Balise Canonical -->
-  <link rel="canonical" href="https://kineleuze-thomasdelavallee.be/" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta property="og:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
@@ -24,8 +20,8 @@
   <meta name="twitter:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
   <meta name="twitter:image" content="https://kineleuze-thomasdelavallee.be/your-square-logo.png">
   
-  <!-- JSON-LD Structured Data pour MedicalBusiness -->
-  <script type="application/ld+json">
+<!-- JSON-LD Structured Data pour MedicalBusiness -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
@@ -64,6 +60,7 @@
     }
   }
   </script>
+  
 
   <title>Thomas Delavallée - Kinésithérapeute Leuze-en-Hainaut | Kiné Leuze, kinésithérapie sportive et rééducation</title>
   
@@ -73,15 +70,11 @@
     body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     
-    /* Titres uniformes pour toutes les sections */
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #0077cc;
-      font-size: 2em;
-      font-weight: bold;
-      width: 100%;
-      line-height: 1.2;
+    /* Container pour limiter la largeur sur PC */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
     
     /* Header - Menu fixe */
@@ -105,32 +98,26 @@
     }
     .header-name span { display: block; font-size: 0.7em; color: #cbd5e1; }
     
-    /* Navigation pour écrans larges et petits */
-    .nav-full, .nav-min { display: flex; gap: 20px; align-items: center; }
-    
-    /* Affichage en fonction de la taille d'écran */
-    @media (min-width: 1024px) {
-      .nav-full { display: flex; }
-      .nav-min { display: none; }
+    /* Menu complet : visible uniquement sur écrans larges */
+    .nav-full {
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
-    @media (max-width: 1023px) {
+    @media (max-width: 768px) {
       .nav-full { display: none; }
-      .nav-min { display: flex; }
     }
     
-    /* Liens de navigation en blanc et surlignés en orange au survol */
-    nav a { font-weight: bold; color: #fff; }
-    nav a:hover { color: #F97316; }
-    
+    /* Bouton "Prendre Rendez-vous" toujours affiché */
     .btn-rdv-header {
       background: #F97316;
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: bold;
-      min-width: 140px;
       text-align: center;
       cursor: pointer;
+      min-width: 140px;
     }
     
     /* Hero Section */
@@ -141,19 +128,10 @@
       text-align: center;
       color: #333;
     }
-    .hero h1 { 
-      font-size: 2.8em; 
-      margin-bottom: 10px; 
-      line-height: 1.2;
-    }
+    .hero h1 { font-size: 2.8em; margin-bottom: 10px; line-height: 1.2; }
     .hero h1 br { display: block; }
     .hero p { font-size: 1.3em; margin-bottom: 25px; }
-    .hero .subheadline { 
-      font-size: 1.6em; 
-      margin: 20px 0; 
-      font-weight: bold; 
-      color: #0077cc; 
-    }
+    .hero .subheadline { font-size: 1.6em; margin: 20px 0; font-weight: bold; color: #0077cc; }
     .btn-rdv-hero {
       background: #F97316;
       color: #fff;
@@ -245,7 +223,7 @@
       fill: white;
     }
     
-    /* Section Infos Pratiques avec effet zoom sur hover (pour écrans larges) */
+    /* Section Infos Pratiques */
     .info-pratiques {
       display: flex;
       flex-direction: column;
@@ -447,19 +425,22 @@
     }
     .blink { animation: blinkText 1s ease-in-out 3; }
     
-    /* Footer optimisé SEO */
+    /* Footer */
     footer {
       background-color: #1E3A8A;
       color: #fff;
       padding: 40px 5%;
       font-size: 0.95em;
       line-height: 1.5;
+      margin-top: 40px;
     }
     .footer-container {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .footer-column { flex: 1; min-width: 200px; }
     .footer-column h3 {
@@ -529,256 +510,251 @@
       <span>Kiné Leuze</span>
       Thomas Delavallée
     </div>
-    <!-- Menu pour écrans larges -->
+    <!-- Menu complet : affiché uniquement sur PC -->
     <nav class="nav-full">
       <a href="#specialties">Spécialités</a>
       <a href="#info">Infos Pratiques</a>
       <a href="#testimonials">Avis des patients</a>
       <a href="#blog">Articles Scientifiques</a>
     </nav>
-    <!-- Menu minimal pour petits écrans -->
-    <nav class="nav-min">
-      <a href="#specialties">Spécialités</a>
-      <a href="#info">Infos Pratiques</a>
-    </nav>
+    <!-- Bouton toujours affiché -->
     <a href="#contact" class="btn-rdv-header">Prendre Rendez-vous</a>
   </header>
   
   <main>
-    <!-- Section Accueil (Hero) -->
     <section class="hero" id="accueil">
       <h1>Thomas Delavallée Kinésithérapeute<br>Leuze-en-Hainaut</h1>
       <p class="subheadline">RETROUVEZ VOTRE LIBERTÉ</p>
       <p>
         Kinésithérapeute à Leuze-en-Hainaut spécialisé en kiné sportive, rééducation, vertébrothérapie et thérapie manuelle depuis 2012.<br>
-        En tant que kiné à Leuze, je m'engage à vous offrir un suivi personnalisé pour une récupération optimale. Faites confiance à un kinésithérapeute expérimenté pour retrouver votre mobilité et améliorer votre qualité de vie.
+        En tant que kiné à Leuze, je m'engage à vous offrir un suivi personnalisé pour une récupération optimale.
       </p>
       <a href="#contact" class="btn-rdv-hero">Prendre Rendez-vous</a>
     </section>
     
-    <!-- Section Mon Approche -->
-    <section class="approach" id="approach">
-      <h2>Mon Approche en Kinésithérapie</h2>
-      <ul>
-        <li><strong>Récupération optimale :</strong> Protocoles de kinésithérapie basés sur les dernières avancées scientifiques.</li>
-        <li><strong>Information claire :</strong> Votre kinésithérapeute à Leuze vous aide à comprendre précisément votre condition pour une rééducation réussie.</li>
-        <li><strong>Suivi personnalisé :</strong> Plan thérapeutique adapté à vos objectifs personnels, guidé par un kiné à Leuze-en-Hainaut.</li>
-        <li><strong>Salle de sport à disposition :</strong> Pour favoriser votre rééducation et optimiser votre récupération physique près de chez vous.</li>
-      </ul>
-    </section>
-    
-    <!-- Section Spécialités -->
-    <section id="specialties">
-      <h2>Spécialités</h2>
-      <div class="specialties-container">
-        <div class="specialty-card">
-          <div class="icon" aria-label="Kiné Sportive" title="Kiné Sportive">⚽</div>
-          <h3>Kiné Sportive</h3>
-          <p>Tendinites, entorses, fractures, contractures musculaires, etc.</p>
-        </div>
-        <div class="specialty-card dos">
-          <div class="icon" aria-label="Tronc de squelette" title="Problèmes de Dos">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <line x1="12" y1="3" x2="12" y2="21" stroke="white" stroke-width="2"/>
-              <line x1="9" y1="6" x2="15" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <line x1="9" y1="12" x2="15" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <line x1="9" y1="18" x2="15" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+    <div class="container">
+      <section class="approach" id="approach">
+        <h2>Mon Approche en Kinésithérapie</h2>
+        <ul>
+          <li><strong>Récupération optimale :</strong> Protocoles de kinésithérapie basés sur les dernières avancées scientifiques.</li>
+          <li><strong>Information claire :</strong> Votre kinésithérapeute à Leuze vous aide à comprendre précisément votre condition pour une rééducation réussie.</li>
+          <li><strong>Suivi personnalisé :</strong> Plan thérapeutique adapté à vos objectifs personnels, guidé par un kiné à Leuze-en-Hainaut.</li>
+          <li><strong>Salle de sport à disposition :</strong> Pour favoriser votre rééducation et optimiser votre récupération physique près de chez vous.</li>
+        </ul>
+      </section>
+      
+      <!-- Section Spécialités -->
+      <section id="specialties">
+        <h2>Spécialités</h2>
+        <div class="specialties-container">
+          <div class="specialty-card">
+            <div class="icon" aria-label="Kiné Sportive" title="Kiné Sportive">⚽</div>
+            <h3>Kiné Sportive</h3>
+            <p>Tendinites, entorses, fractures, contractures musculaires, etc.</p>
           </div>
-          <h3>Problèmes de Dos</h3>
-          <p>Cervicalgies, lombalgies, dorsalgies, sciatalgies, posture, scoliose, etc.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Rééducation à la Marche" title="Rééducation à la Marche">🚶‍♂️</div>
-          <h3>Rééducation à la Marche</h3>
-          <p>Programmes personnalisés pour retrouver l’équilibre et l’autonomie, spécialement pour seniors et patients neurologiques.</p>
-        </div>
-        <div class="specialty-card postop">
-          <div class="icon" aria-label="Logo Post-Opératoire (plâtre)" title="Post-Opératoire">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <rect x="3" y="9" width="18" height="6" rx="2" ry="2" fill="white" />
-              <line x1="8" y1="12" x2="16" y2="12" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+          <div class="specialty-card dos">
+            <div class="icon" aria-label="Tronc de squelette" title="Problèmes de Dos">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <line x1="12" y1="3" x2="12" y2="21" stroke="white" stroke-width="2"/>
+                <line x1="9" y1="6" x2="15" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="9" y1="12" x2="15" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="9" y1="18" x2="15" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Problèmes de Dos</h3>
+            <p>Cervicalgies, lombalgies, dorsalgies, sciatalgies, posture, scoliose, etc.</p>
           </div>
-          <h3>Post-Opératoire</h3>
-          <p>Soins post-chirurgicaux : suivi après prothèses, fractures, accidents, etc.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Kiné Respiratoire" title="Kiné Respiratoire">🫁</div>
-          <h3>Kiné Respiratoire</h3>
-          <p>Bronchite chronique, bronchiolite, récupération de la capacité pulmonaire.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Maxillo-Faciale" title="Maxillo-Faciale">😊</div>
-          <h3>Maxillo-Faciale</h3>
-          <p>Maux de tête, problèmes de mâchoire, etc.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Réentrainement à l'effort" title="Réentrainement à l'effort">🏋️‍♂️</div>
-          <h3>Réentrainement à l'effort</h3>
-          <p>Programmes sur mesure pour retrouver l'autonomie, reprendre une activité physique ou améliorer les performances sportives par le travail musculaire et l'endurance.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Thérapie Manuelle" title="Thérapie Manuelle">🤲</div>
-          <h3>Thérapie Manuelle</h3>
-          <p>Techniques manuelles pour rétablir la mobilité articulaire et soulager les tensions.</p>
-        </div>
-        <div class="specialty-card">
-          <div class="icon" aria-label="Fasciathérapie" title="Fasciathérapie">🌀</div>
-          <h3>Fasciathérapie</h3>
-          <p>Approche douce pour améliorer la mobilité et la souplesse des fascias.</p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Section Infos Pratiques -->
-    <section class="info-pratiques" id="info">
-      <h2>Infos Pratiques</h2>
-      <div class="info-card">
-        <div class="icon" aria-label="Horaires" title="Horaires">⏰</div>
-        <p><strong>Horaires :</strong> du Lundi au Vendredi, 8h - 19h.</p>
-      </div>
-      <div class="info-card">
-        <div class="icon" aria-label="Parking" title="Parking">🅿️</div>
-        <p><strong>Parking :</strong> Parking facile en face du cabinet pour un accès rapide et sans stress.</p>
-      </div>
-      <div class="info-card">
-        <div class="icon" aria-label="Salle de Sport" title="Salle de Sport">🏋️</div>
-        <p><strong>Salle de Sport :</strong> Une petite salle de sport sur place pour vos séances de rééducation et de renforcement.</p>
-      </div>
-      <div class="info-card">
-        <div class="icon" aria-label="Déplacements" title="Déplacements">🏠</div>
-        <p><strong>Déplacements :</strong> Soins à domicile possibles en cas d'incapacité de se déplacer.</p>
-      </div>
-      <div class="info-card">
-        <div class="icon" aria-label="Conventionné" title="Conventionné">✅</div>
-        <p><strong>Conventionné :</strong> Cabinet conventionné, tiers-payant possible.</p>
-      </div>
-    </section>
-    
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-      <h2>Contactez-moi</h2>
-      <p><strong>Téléphone :</strong> <a href="tel:+32494870631" style="font-size:1.3em; color:#F97316;"><strong>+32 494 87 06 31</strong></a></p>
-      <p><strong>Adresse :</strong> Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
-      <a href="#contact" class="btn-rdv-hero">Prendre Rendez-vous</a>
-    </section>
-    
-    <!-- Section Adresse & Google Map -->
-    <section class="map-section">
-      <h2>Localisation</h2>
-      <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-    
-    <!-- Section Avis / Témoignages -->
-    <section class="testimonials" id="testimonials">
-      <h2>Avis des patients</h2>
-      <div class="testimonial-container">
-        <div class="testimonial">
-          <p class="quote">"Un très bon professionnel kiné, compétent. A l'écoute, gentillesse."</p>
-          <p class="author">— Isabelle</p>
-        </div>
-        <div class="testimonial">
-          <p class="quote">"Kiné très professionnel, attentif au suivi de ses patients."</p>
-          <p class="author">— Christine</p>
-        </div>
-        <div class="testimonial">
-          <p class="quote">"Très professionnel, sympathique. De bon conseil pour la rééducation. Étape par étape."</p>
-          <p class="author">— John</p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Section FAQ -->
-    <section class="faq" id="faq">
-      <h2>FAQ</h2>
-      <div class="faq-item">
-        <h3>Quel document apporter ?</h3>
-        <p>Carte d'identité, prescription médicale, examens, protocole opératoire, police d'assurance, tout ce qui peut m'aider à vous soigner.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Quels tarifs ?</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Type de prestation</th>
-              <th>Honoraires (€)</th>
-              <th>Remboursement patient ordinaire (€)</th>
-              <th>Remboursement BIM (€)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Au cabinet</td>
-              <td>30,80</td>
-              <td>24,55</td>
-              <td>28,30</td>
-            </tr>
-            <tr>
-              <td>À domicile</td>
-              <td>33,88</td>
-              <td>27,63</td>
-              <td>31,38</td>
-            </tr>
-            <tr>
-              <td>Frais de dossier (pathologie normale)</td>
-              <td>7,19</td>
-              <td>7,19</td>
-              <td>7,19</td>
-            </tr>
-            <tr>
-              <td>Frais de dossier (pathologie lourde)</td>
-              <td>34,62</td>
-              <td>32,00</td>
-              <td>32,00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    
-    <!-- Section Blog / Articles Scientifiques -->
-    <section class="blog" id="blog">
-      <h2>Articles Scientifiques</h2>
-      <p class="intro-blog">
-        Notre approche est basée sur des recherches scientifiques de pointe. Découvrez nos articles pour en savoir plus sur les avancées en kinésithérapie, rééducation et thérapie manuelle.
-      </p>
-      <div class="blog-container">
-        <article class="blog-post">
-          <img src="images/blog1.jpg" alt="Kinésithérapie sportive avancée">
-          <div class="blog-content">
-            <h3><a href="blog1.html">Les dernières avancées scientifiques en kinésithérapie sportive</a></h3>
-            <p class="blog-date">Publié le 15 avril 2025</p>
-            <p>Découvrez comment la science améliore la récupération sportive grâce à des techniques innovantes validées par des études récentes...</p>
-            <a href="blog1.html" class="read-more">Lire l'article →</a>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Rééducation à la Marche" title="Rééducation à la Marche">🚶‍♂️</div>
+            <h3>Rééducation à la Marche</h3>
+            <p>Programmes personnalisés pour retrouver l’équilibre et l’autonomie, spécialement pour seniors et patients neurologiques.</p>
           </div>
-        </article>
-
-        <article class="blog-post">
-          <img src="images/blog2.jpg" alt="Rééducation basée sur la recherche">
-          <div class="blog-content">
-            <h3><a href="blog2.html">Comment les recherches scientifiques améliorent votre rééducation</a></h3>
-            <p class="blog-date">Publié le 2 mars 2025</p>
-            <p>La rééducation efficace nécessite une approche basée sur des données probantes. Découvrez les dernières techniques scientifiques...</p>
-            <a href="blog2.html" class="read-more">Lire l'article →</a>
+          <div class="specialty-card postop">
+            <div class="icon" aria-label="Logo Post-Opératoire (plâtre)" title="Post-Opératoire">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect x="3" y="9" width="18" height="6" rx="2" ry="2" fill="white" />
+                <line x1="8" y1="12" x2="16" y2="12" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Post-Opératoire</h3>
+            <p>Soins post-chirurgicaux : suivi après prothèses, fractures, accidents, etc.</p>
           </div>
-        </article>
-
-        <article class="blog-post">
-          <img src="images/blog3.jpg" alt="Thérapie manuelle scientifique">
-          <div class="blog-content">
-            <h3><a href="blog3.html">La thérapie manuelle : une approche validée par la recherche</a></h3>
-            <p class="blog-date">Publié le 20 février 2025</p>
-            <p>Explorez les bienfaits scientifiquement démontrés de la thérapie manuelle sur votre mobilité et votre bien-être physique...</p>
-            <a href="blog3.html" class="read-more">Lire l'article →</a>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Kiné Respiratoire" title="Kiné Respiratoire">🫁</div>
+            <h3>Kiné Respiratoire</h3>
+            <p>Bronchite chronique, bronchiolite, récupération de la capacité pulmonaire.</p>
           </div>
-        </article>
-      </div>
-    </section>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Maxillo-Faciale" title="Maxillo-Faciale">😊</div>
+            <h3>Maxillo-Faciale</h3>
+            <p>Maux de tête, problèmes de mâchoire, etc.</p>
+          </div>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Réentrainement à l'effort" title="Réentrainement à l'effort">🏋️‍♂️</div>
+            <h3>Réentrainement à l'effort</h3>
+            <p>Programmes sur mesure pour retrouver l'autonomie, reprendre une activité physique ou améliorer les performances sportives par le travail musculaire et l'endurance.</p>
+          </div>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Thérapie Manuelle" title="Thérapie Manuelle">🤲</div>
+            <h3>Thérapie Manuelle</h3>
+            <p>Techniques manuelles pour rétablir la mobilité articulaire et soulager les tensions.</p>
+          </div>
+          <div class="specialty-card">
+            <div class="icon" aria-label="Fasciathérapie" title="Fasciathérapie">🌀</div>
+            <h3>Fasciathérapie</h3>
+            <p>Approche douce pour améliorer la mobilité et la souplesse des fascias.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section Infos Pratiques -->
+      <section class="info-pratiques" id="info">
+        <h2>Infos Pratiques</h2>
+        <div class="info-card">
+          <div class="icon" aria-label="Horaires" title="Horaires">⏰</div>
+          <p><strong>Horaires :</strong> du Lundi au Vendredi, 8h - 19h.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon" aria-label="Parking" title="Parking">🅿️</div>
+          <p><strong>Parking :</strong> Parking facile en face du cabinet pour un accès rapide et sans stress.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon" aria-label="Salle de Sport" title="Salle de Sport">🏋️</div>
+          <p><strong>Salle de Sport :</strong> Une petite salle de sport sur place pour vos séances de rééducation et de renforcement.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon" aria-label="Déplacements" title="Déplacements">🏠</div>
+          <p><strong>Déplacements :</strong> Soins à domicile possibles en cas d'incapacité de se déplacer.</p>
+        </div>
+        <div class="info-card">
+          <div class="icon" aria-label="Conventionné" title="Conventionné">✅</div>
+          <p><strong>Conventionné :</strong> Cabinet conventionné, tiers-payant possible.</p>
+        </div>
+      </section>
+      
+      <!-- Section Contact -->
+      <section class="contact" id="contact">
+        <h2>Contactez-moi</h2>
+        <p><strong>Téléphone :</strong> <a href="tel:+32494870631" style="font-size:1.3em; color:#F97316;"><strong>+32 494 87 06 31</strong></a></p>
+        <p><strong>Adresse :</strong> Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
+        <a href="#contact" class="btn-rdv-hero">Prendre Rendez-vous</a>
+      </section>
+      
+      <!-- Section Adresse & Google Map -->
+      <section class="map-section">
+        <h2>Localisation</h2>
+        <p>Avenue de la Résistance 6, 7900 Leuze-en-Hainaut</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.295091393245!2d3.6176923767761533!3d50.602546176400686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2fd0d3478eabf%3A0x960df252e2762279!2sDelavall%C3%A9e%20Thomas!5e1!3m2!1sfr!2sbe!4v1741122690706!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy"></iframe>
+      </section>
+      
+      <!-- Section Témoignages -->
+      <section class="testimonials" id="testimonials">
+        <h2>Avis des patients</h2>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <p class="quote">"Un très bon professionnel kiné, compétent. A l'écoute, gentillesse."</p>
+            <p class="author">— Isabelle</p>
+          </div>
+          <div class="testimonial">
+            <p class="quote">"Kiné très professionnel, attentif au suivi de ses patients."</p>
+            <p class="author">— Christine</p>
+          </div>
+          <div class="testimonial">
+            <p class="quote">"Très professionnel, sympathique. De bon conseil pour la rééducation. Étape par étape."</p>
+            <p class="author">— John</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section FAQ -->
+      <section class="faq" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+          <h3>Quel document apporter ?</h3>
+          <p>Carte d'identité, prescription médicale, examens, protocole opératoire, police d'assurance, tout ce qui peut m'aider à vous soigner.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Quels tarifs ?</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Type de prestation</th>
+                <th>Honoraires (€)</th>
+                <th>Remboursement patient ordinaire (€)</th>
+                <th>Remboursement BIM (€)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Au cabinet</td>
+                <td>30,80</td>
+                <td>24,55</td>
+                <td>28,30</td>
+              </tr>
+              <tr>
+                <td>À domicile</td>
+                <td>33,88</td>
+                <td>27,63</td>
+                <td>31,38</td>
+              </tr>
+              <tr>
+                <td>Frais de dossier (pathologie normale)</td>
+                <td>7,19</td>
+                <td>7,19</td>
+                <td>7,19</td>
+              </tr>
+              <tr>
+                <td>Frais de dossier (pathologie lourde)</td>
+                <td>34,62</td>
+                <td>32,00</td>
+                <td>32,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      
+      <!-- Section Blog / Articles Scientifiques -->
+      <section class="blog" id="blog">
+        <h2>Articles Scientifiques</h2>
+        <p class="intro-blog">
+          Notre approche est basée sur des recherches scientifiques de pointe. Découvrez nos articles pour en savoir plus sur les avancées en kinésithérapie, rééducation et thérapie manuelle.
+        </p>
+        <div class="blog-container">
+          <article class="blog-post">
+            <img src="images/blog1.jpg" alt="Kinésithérapie sportive avancée">
+            <div class="blog-content">
+              <h3><a href="blog1.html">Les dernières avancées scientifiques en kinésithérapie sportive</a></h3>
+              <p class="blog-date">Publié le 15 avril 2025</p>
+              <p>Découvrez comment la science améliore la récupération sportive grâce à des techniques innovantes validées par des études récentes...</p>
+              <a href="blog1.html" class="read-more">Lire l'article →</a>
+            </div>
+          </article>
+  
+          <article class="blog-post">
+            <img src="images/blog2.jpg" alt="Rééducation basée sur la recherche">
+            <div class="blog-content">
+              <h3><a href="blog2.html">Comment les recherches scientifiques améliorent votre rééducation</a></h3>
+              <p class="blog-date">Publié le 2 mars 2025</p>
+              <p>La rééducation efficace nécessite une approche basée sur des données probantes. Découvrez les dernières techniques scientifiques...</p>
+              <a href="blog2.html" class="read-more">Lire l'article →</a>
+            </div>
+          </article>
+  
+          <article class="blog-post">
+            <img src="images/blog3.jpg" alt="Thérapie manuelle scientifique">
+            <div class="blog-content">
+              <h3><a href="blog3.html">La thérapie manuelle : une approche validée par la recherche</a></h3>
+              <p class="blog-date">Publié le 20 février 2025</p>
+              <p>Explorez les bienfaits scientifiquement démontrés de la thérapie manuelle sur votre mobilité et votre bien-être physique...</p>
+              <a href="blog3.html" class="read-more">Lire l'article →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
   
-  <!-- Script pour activer le clignotement sur le numéro de téléphone -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header, .footer-btn-rdv');
@@ -800,7 +776,6 @@
     });
   </script>
   
-  <!-- Footer optimisé SEO -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
