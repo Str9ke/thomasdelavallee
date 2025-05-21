@@ -14,7 +14,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta property="og:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta property="og:image" content="https://kineleuze-thomasdelavallee.be/squarelogo.png">
+  <meta property="og:image" content="squarelogo.png">
   <meta property="og:url" content="https://kineleuze-thomasdelavallee.be/">
   <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta name="twitter:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta name="twitter:image" content="https://kineleuze-thomasdelavallee.be/your-square-logo.png">
+  <meta name="twitter:image" content="squarelogo.png">
   
   <!-- JSON-LD Structured Data pour MedicalBusiness -->
   <script type="application/ld+json">
@@ -30,7 +30,7 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": "Thomas Delavallée - Kinésithérapeute",
-      "image": "https://kineleuze-thomasdelavallee.be/your-square-logo.png",
+      "image": "squarelogo.png",
       "telephone": "+32494870631",
       "address": {
         "@type": "PostalAddress",
@@ -95,11 +95,47 @@
       }
       .header-name {
         color: #fff;
-        font-size: 1.5em;
+        font-size: 1.5em; /* Taille de base pour Thomas Delavallée */
         font-weight: bold;
-        line-height: 1.2;
+        display: flex;
+        align-items: center; 
       }
-      .header-name span { display: block; font-size: 0.7em; color: #cbd5e1; }
+      /* L'ancienne règle .header-name span est supprimée car trop générale. */
+      
+      .header-text-content {
+        line-height: 1.2; 
+      }
+
+      .header-subtitle { /* Pour "Kiné Leuze" */
+        display: block; /* Pour passer à la ligne */
+        font-size: 0.7em; /* Relative à .header-name (1.5em * 0.7 = 1.05em) */
+        color: #cbd5e1;
+      }
+
+      .header-main-name { /* Pour "Thomas Delavallée" */
+        display: block; /* Pour passer à la ligne */
+      }
+
+      .gb-rating-block-display {
+        display: inline-block; /* Permet le centrage par text-align: center du parent .hero */
+        line-height: 1.1; /* Rapproche les deux lignes d'avis */
+        text-align: center; /* Centre le texte des enfants (stars et reviews) */
+        margin-top: 15px; /* Espace sous le H1 */
+        margin-bottom: 15px; /* Espace au-dessus du sous-titre */
+      }
+
+      .gb-rating-stars-display {
+        display: inline; /* Pour s'afficher sur la même ligne */
+        font-size: 1.2em; /* Taille ajustée pour la section hero */
+        color: #FFD700;
+        margin-right: 5px; /* Ajoute un petit espace après les étoiles */
+      }
+
+      .gb-rating-reviews-display {
+        display: inline; /* Pour s'afficher sur la même ligne */
+        font-size: 1.2em; /* Taille ajustée pour la section hero */
+        color: #FFD700; /* Identique à #gb-rating-stars */
+      }
       
       /* Menu complet : visible uniquement sur écrans larges */
       .nav-full a {
@@ -447,7 +483,7 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
-      .blink { animation: blinkText 1s ease-in-out 3; }
+      .blink { animation: blinkText 0.5s ease-in-out 6; } /* Clignote plus vite (0.5s par cycle, 6 fois) */
       
       /* Footer */
       footer {
@@ -522,6 +558,16 @@
         .footer-column { margin-bottom: 20px; }
       }
     </style>
+    <!-- Favicon -->
+    <link rel="icon" href="squarelogo.png" />
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://maps.googleapis.com;
+      connect-src 'self' https://maps.googleapis.com https://places.googleapis.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data:;
+      frame-src https://*.google.com https://*.googleapis.com;
+    ">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -531,15 +577,14 @@
     
     <header>
       <div class="header-name">
-        <span>Kiné Leuze</span>
-        Thomas Delavallée
+       <div class="header-text-content">
+         <span class="header-subtitle">Kiné Leuze</span><span class="header-main-name">Thomas Delavallée</span>
+       </div>
       </div>
       <!-- Menu complet (liens) affiché uniquement sur écrans larges -->
       <nav class="nav-full">
         <a href="#specialties">Spécialités</a>
         <a href="#info">Infos Pratiques</a>
-        <a href="#testimonials">Avis des patients</a>
-        <a href="#blog">Articles Scientifiques</a>
       </nav>
       <!-- Bouton "Prendre Rendez-vous" : redirige vers l'ancre contact-anchor -->
       <a href="#contact-anchor" class="btn-rdv-header">Prendre Rendez-vous</a>
@@ -548,6 +593,10 @@
     <main>
       <section class="hero" id="accueil">
         <h1>Thomas Delavallée Kinésithérapeute<br>Leuze-en-Hainaut</h1>
+        <div class="gb-rating-block-display">
+          <span class="gb-rating-stars-display"></span>
+          <span class="gb-rating-reviews-display"></span>
+        </div>
         <p class="subheadline">RETROUVEZ VOTRE LIBERTÉ</p>
         <p>
           Kinésithérapeute à Leuze-en-Hainaut spécialisé en kiné sportive, rééducation, vertébrothérapie et thérapie manuelle depuis 2012.<br>
@@ -676,6 +725,10 @@
         <!-- Section Témoignages -->
         <section class="testimonials" id="testimonials">
           <h2>Avis des patients</h2>
+          <div class="gb-rating-block-display">
+            <span class="gb-rating-stars-display"></span>
+            <span class="gb-rating-reviews-display"></span>
+          </div>
           <div class="testimonial-container">
             <div class="testimonial">
               <p class="quote">"Un très bon professionnel kiné, compétent. A l'écoute, gentillesse."</p>
@@ -764,6 +817,82 @@
         });
       });
     </script>
+    <!-- Google Business Rating Script -->
+    <script>
+      function displayFallbackRating() {
+        let fallbackRating = "N/A";
+        let fallbackReviewCount = "N/A";
+        try {
+            const ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
+            ldJsonScripts.forEach(script => {
+                const data = JSON.parse(script.textContent);
+                if (data['@type'] === 'MedicalBusiness' && data.aggregateRating) {
+                    if (data.aggregateRating.ratingValue) {
+                        fallbackRating = parseFloat(data.aggregateRating.ratingValue).toFixed(1).replace('.', ',');
+                    }
+                    if (data.aggregateRating.reviewCount) {
+                        fallbackReviewCount = data.aggregateRating.reviewCount;
+                    }
+                }
+            });
+            const fallbackStarsText = fallbackRating !== "N/A" ? '★'.repeat(Math.round(parseFloat(fallbackRating.replace(',', '.')) || 0)) : "";
+            
+            document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = `${fallbackRating} ${fallbackStarsText}`);
+            document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = `(${fallbackReviewCount}) Avis`);
+
+        } catch (e) {
+            console.error("Erreur lors de la lecture du JSON-LD pour fallback:", e);
+            document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = 'Infos');
+            document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = 'indisponibles');
+        }
+      }
+
+      function initGBRating() {
+        // Un élément div est requis pour l'attribution du PlacesService.
+        // Il peut être masqué.
+        let attributionDiv = document.getElementById('places-service-attribution-container');
+        if (!attributionDiv) {
+            attributionDiv = document.createElement('div');
+            attributionDiv.id = 'places-service-attribution-container';
+            attributionDiv.style.display = 'none'; // Pas besoin de l'afficher
+            document.body.appendChild(attributionDiv);
+        }
+
+        const service = new google.maps.places.PlacesService(attributionDiv);
+        const request = {
+            placeId: 'ChIJv-p4NA39wkcReSJ24lLyDZY', // Votre Place ID
+            fields: ['rating', 'user_ratings_total'] // Champs demandés pour getDetails
+        };
+
+        service.getDetails(request, (placeResult, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && placeResult) {
+                const ratingVal = placeResult.rating;
+                const starsText = '★'.repeat(Math.round(ratingVal || 0));
+                const ratingNum = (ratingVal || 0).toFixed(1).replace('.', ',');
+                
+                const totalReviewCount = placeResult.user_ratings_total || 0;
+
+                document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = `${ratingNum} ${starsText}`);
+                document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = `(${totalReviewCount}) Avis`);
+            } else {
+                console.error('Échec de la récupération des détails du lieu via PlacesService. Statut:', status);
+                displayFallbackRating();
+            }
+        });
+      }
+    </script>
+    <!-- Chargement optimisé via JS API Loader -->
+    <script type="module" async defer>
+      import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.15.2/dist/index.esm.js';
+      const loader = new Loader({
+        apiKey: 'AIzaSyD8TMnCaMzm_nt9uVI6aOqfYJM35k9mPB8', // remplacez ici par votre clé valide
+        version: 'weekly',
+        libraries: ['places']
+      });
+      loader.load()
+        .then(() => initGBRating())
+        .catch(console.error);
+    </script>
     
     <footer>
       <div class="footer-container">
@@ -778,8 +907,6 @@
           <ul>
             <li><a href="#specialties">Spécialités</a></li>
             <li><a href="#info">Infos Pratiques</a></li>
-            <li><a href="#testimonials">Avis des patients</a></li>
-            <li><a href="#blog">Articles Scientifiques</a></li>
           </ul>
         </div>
         <div class="footer-column">
