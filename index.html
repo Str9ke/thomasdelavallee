@@ -122,19 +122,25 @@
         text-align: center; /* Centre le texte des enfants (stars et reviews) */
         margin-top: 15px; /* Espace sous le H1 */
         margin-bottom: 15px; /* Espace au-dessus du sous-titre */
+        background-color: #fff; /* Fond blanc */
+        padding: 8px 15px;         /* Augmentation du padding pour un meilleur aspect */
+        border-radius: 5px;        /* Coins arrondis */
+        border: 1px solid #DADCE0; /* Bordure grise claire style Google */
       }
 
       .gb-rating-stars-display {
         display: inline; /* Pour s'afficher sur la même ligne */
         font-size: 1.2em; /* Taille ajustée pour la section hero */
-        color: #FFD700;
+        color: #FBBC05; /* Jaune/Or Google pour les étoiles et la note */
         margin-right: 5px; /* Ajoute un petit espace après les étoiles */
+        font-weight: bold; /* Met le texte en gras */
       }
 
       .gb-rating-reviews-display {
         display: inline; /* Pour s'afficher sur la même ligne */
         font-size: 1.2em; /* Taille ajustée pour la section hero */
-        color: #FFD700; /* Identique à #gb-rating-stars */
+        color: #70757a; /* Gris Google pour le texte des avis */
+        font-weight: normal; /* Poids de police normal pour le nombre d'avis */
       }
       
       /* Menu complet : visible uniquement sur écrans larges */
@@ -354,9 +360,12 @@
         text-align: center;
       }
       .testimonials h2 {
-        margin-bottom: 30px;
+        margin-bottom: 10px; /* Réduction de la marge inférieure */
         font-size: 2em;
         color: #0077cc;
+      }
+      .testimonials .gb-rating-block-display {
+        margin-top: 10px; /* Réduction de la marge supérieure spécifique à cette section */
       }
       .testimonial-container {
         display: flex;
