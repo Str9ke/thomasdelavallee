@@ -809,19 +809,26 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header, .footer-btn-rdv');
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         rdvButtons.forEach(function(btn) {
           btn.addEventListener("click", function(e) {
-            e.preventDefault();
-            document.querySelector('#contact-anchor').scrollIntoView({ behavior: 'smooth' });
-            setTimeout(function() {
-              var telElement = document.querySelector('a[href^="tel:"]');
-              if (telElement) {
-                telElement.classList.add("blink");
-                setTimeout(function() {
-                  telElement.classList.remove("blink");
-                }, 3000);
-              }
-            }, 700);
+            if (isMobile) {
+              // Sur mobile, lance l'appel téléphonique
+              window.location.href = "tel:+32494870631";
+            } else {
+              // Sur PC, comportement actuel
+              e.preventDefault();
+              document.querySelector('#contact-anchor').scrollIntoView({ behavior: 'smooth' });
+              setTimeout(function() {
+                var telElement = document.querySelector('a[href^="tel:"]');
+                if (telElement) {
+                  telElement.classList.add("blink");
+                  setTimeout(function() {
+                    telElement.classList.remove("blink");
+                  }, 3000);
+                }
+              }, 700);
+            }
           });
         });
       });
