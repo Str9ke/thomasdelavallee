@@ -14,7 +14,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta property="og:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta property="og:image" content="favicon.ico">
+  <meta property="og:image" content="favicon.webp">
   <meta property="og:url" content="https://kineleuze-thomasdelavallee.be/">
   <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut">
   <meta name="twitter:description" content="Kinésithérapeute à Leuze-en-Hainaut spécialisé en kinésithérapie sportive, rééducation et thérapie manuelle depuis 2012.">
-  <meta name="twitter:image" content="favicon.ico">
+  <meta name="twitter:image" content="favicon.webp">
   
   <!-- JSON-LD Structured Data pour MedicalBusiness -->
   <script type="application/ld+json">
@@ -30,7 +30,7 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": "Thomas Delavallée - Kinésithérapeute",
-      "image": "favicon.ico",
+      "image": "favicon.webp",
       "telephone": "+32494870631",
       "address": {
         "@type": "PostalAddress",
@@ -88,10 +88,11 @@
     
     <title>Thomas Delavallée - Kinésithérapeute Leuze-en-Hainaut | Kiné Leuze, kinésithérapie sportive et rééducation</title>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - Inter (optimisé) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <style>
       /* ===== CSS Custom Properties ===== */
       :root {
@@ -841,7 +842,7 @@
       }
     </style>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/webp" href="favicon.webp" />
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://maps.googleapis.com https://www.googletagmanager.com;
@@ -872,7 +873,7 @@
     
     <header>
       <div class="header-name">
-      <img src="favicon.ico" alt="Logo du cabinet" style="height:38px;width:38px;margin-right:12px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+      <img src="favicon.webp" alt="Logo du cabinet de kinésithérapie Thomas Delavallée à Leuze-en-Hainaut" width="38" height="38" style="margin-right:12px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
         <div class="header-text-content">
           <span class="header-subtitle">Kiné Leuze</span><span class="header-main-name">Thomas Delavallée</span>
         </div>
@@ -1110,133 +1111,102 @@
       </div>
     </main>
     
+    <!-- Scripts différés pour ne pas bloquer le rendu -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header, .footer-btn-rdv');
-        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        rdvButtons.forEach(function(btn) {
-          btn.addEventListener("click", function(e) {
-            if (isMobile) {
-              // Sur mobile, lance l'appel téléphonique
-              window.location.href = "tel:+32494870631";
-            } else {
-              // Sur PC, comportement actuel
-              e.preventDefault();
-              document.querySelector('#contact-anchor').scrollIntoView({ behavior: 'smooth' });
-              setTimeout(function() {
-                var telElement = document.querySelector('a[href^="tel:"]');
-                if (telElement) {
-                  telElement.classList.add("blink");
-                  setTimeout(function() {
-                    telElement.classList.remove("blink");
-                  }, 3000);
-                }
-              }, 700);
-            }
-          });
-        });
-      });
-    </script>
-    <!-- Google Business Rating Script -->
-    <script>
-      function displayFallbackRating() {
-        let fallbackRating = "N/A";
-        let fallbackReviewCount = "N/A";
-        try {
-            const ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
-            ldJsonScripts.forEach(script => {
-                const data = JSON.parse(script.textContent);
-                if (data['@type'] === 'MedicalBusiness' && data.aggregateRating) {
-                    if (data.aggregateRating.ratingValue) {
-                        fallbackRating = parseFloat(data.aggregateRating.ratingValue).toFixed(1).replace('.', ',');
-                    }
-                    if (data.aggregateRating.reviewCount) {
-                        fallbackReviewCount = data.aggregateRating.reviewCount;
-                    }
-                }
-            });
-            const fallbackStarsText = fallbackRating !== "N/A" ? '★'.repeat(Math.round(parseFloat(fallbackRating.replace(',', '.')) || 0)) : "";
-            
-            document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = `${fallbackRating} ${fallbackStarsText}`);
-            document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = `(${fallbackReviewCount}) Avis`);
-
-        } catch (e) {
-            console.error("Erreur lors de la lecture du JSON-LD pour fallback:", e);
-            document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = 'Infos');
-            document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = 'indisponibles');
-        }
-      }
-
-      function initGBRating() {
-        // Un élément div est requis pour l'attribution du PlacesService.
-        // Il peut être masqué.
-        let attributionDiv = document.getElementById('places-service-attribution-container');
-        if (!attributionDiv) {
-            attributionDiv = document.createElement('div');
-            attributionDiv.id = 'places-service-attribution-container';
-            attributionDiv.style.display = 'none'; // Pas besoin de l'afficher
-            document.body.appendChild(attributionDiv);
-        }
-
-        const service = new google.maps.places.PlacesService(attributionDiv);
-        const request = {
-            placeId: 'ChIJv-p4NA39wkcReSJ24lLyDZY', // Votre Place ID
-            fields: ['rating', 'user_ratings_total'] // Champs demandés pour getDetails
-        };
-
-        service.getDetails(request, (placeResult, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK && placeResult) {
-                const ratingVal = placeResult.rating;
-                const starsText = '★'.repeat(Math.round(ratingVal || 0));
-                const ratingNum = (ratingVal || 0).toFixed(1).replace('.', ',');
-                
-                const totalReviewCount = placeResult.user_ratings_total || 0;
-
-                document.querySelectorAll('.gb-rating-stars-display').forEach(el => el.textContent = `${ratingNum} ${starsText}`);
-                document.querySelectorAll('.gb-rating-reviews-display').forEach(el => el.textContent = `(${totalReviewCount}) Avis`);
-            } else {
-                console.error('Échec de la récupération des détails du lieu via PlacesService. Statut:', status);
-                displayFallbackRating();
-            }
-        });
-      }
-    </script>
-    <!-- Scroll Reveal & Header Effect -->
-    <script>
-      // Header scroll effect
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-
-      // Intersection Observer for reveal animations
-      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-      const revealObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+    document.addEventListener("DOMContentLoaded", function() {
+      // === Boutons RDV ===
+      var rdvButtons = document.querySelectorAll('.btn-rdv-hero, .btn-rdv-header, .footer-btn-rdv');
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      rdvButtons.forEach(function(btn) {
+        btn.addEventListener("click", function(e) {
+          if (isMobile) {
+            window.location.href = "tel:+32494870631";
+          } else {
+            e.preventDefault();
+            document.querySelector('#contact-anchor').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(function() {
+              var telElement = document.querySelector('a[href^="tel:"]');
+              if (telElement) {
+                telElement.classList.add("blink");
+                setTimeout(function() { telElement.classList.remove("blink"); }, 3000);
+              }
+            }, 700);
           }
         });
+      });
+
+      // === Header scroll effect ===
+      window.addEventListener('scroll', function() {
+        var header = document.querySelector('header');
+        if (window.scrollY > 50) { header.classList.add('scrolled'); }
+        else { header.classList.remove('scrolled'); }
+      });
+
+      // === Scroll Reveal (Intersection Observer) ===
+      var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
       }, observerOptions);
-      document.querySelectorAll('.reveal').forEach(function(el) {
-        revealObserver.observe(el);
-      });
+      document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+    });
     </script>
-    <!-- Chargement optimisé via JS API Loader -->
-    <script type="module" async defer>
-      import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.15.2/dist/index.esm.js';
-      const loader = new Loader({
-        apiKey: 'AIzaSyD8TMnCaMzm_nt9uVI6aOqfYJM35k9mPB8', // remplacez ici par votre clé valide
-        version: 'weekly',
-        libraries: ['places']
+    <!-- Google Business Rating + Maps API (chargé en différé) -->
+    <script>
+    function displayFallbackRating() {
+      var fallbackRating = "N/A", fallbackReviewCount = "N/A";
+      try {
+        var ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
+        ldJsonScripts.forEach(function(script) {
+          var data = JSON.parse(script.textContent);
+          if (data['@type'] === 'MedicalBusiness' && data.aggregateRating) {
+            if (data.aggregateRating.ratingValue) fallbackRating = parseFloat(data.aggregateRating.ratingValue).toFixed(1).replace('.', ',');
+            if (data.aggregateRating.reviewCount) fallbackReviewCount = data.aggregateRating.reviewCount;
+          }
+        });
+        var fallbackStarsText = fallbackRating !== "N/A" ? '★'.repeat(Math.round(parseFloat(fallbackRating.replace(',', '.')) || 0)) : "";
+        document.querySelectorAll('.gb-rating-stars-display').forEach(function(el) { el.textContent = fallbackRating + ' ' + fallbackStarsText; });
+        document.querySelectorAll('.gb-rating-reviews-display').forEach(function(el) { el.textContent = '(' + fallbackReviewCount + ') Avis'; });
+      } catch (e) {
+        document.querySelectorAll('.gb-rating-stars-display').forEach(function(el) { el.textContent = 'Infos'; });
+        document.querySelectorAll('.gb-rating-reviews-display').forEach(function(el) { el.textContent = 'indisponibles'; });
+      }
+    }
+    function initGBRating() {
+      var attributionDiv = document.getElementById('places-service-attribution-container');
+      if (!attributionDiv) {
+        attributionDiv = document.createElement('div');
+        attributionDiv.id = 'places-service-attribution-container';
+        attributionDiv.style.display = 'none';
+        document.body.appendChild(attributionDiv);
+      }
+      var service = new google.maps.places.PlacesService(attributionDiv);
+      service.getDetails({ placeId: 'ChIJv-p4NA39wkcReSJ24lLyDZY', fields: ['rating', 'user_ratings_total'] }, function(placeResult, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK && placeResult) {
+          var ratingVal = placeResult.rating;
+          var starsText = '★'.repeat(Math.round(ratingVal || 0));
+          var ratingNum = (ratingVal || 0).toFixed(1).replace('.', ',');
+          var totalReviewCount = placeResult.user_ratings_total || 0;
+          document.querySelectorAll('.gb-rating-stars-display').forEach(function(el) { el.textContent = ratingNum + ' ' + starsText; });
+          document.querySelectorAll('.gb-rating-reviews-display').forEach(function(el) { el.textContent = '(' + totalReviewCount + ') Avis'; });
+        } else { displayFallbackRating(); }
       });
-      loader.load()
-        .then(() => initGBRating())
-        .catch(console.error);
+    }
+    // Charger l'API Google Maps seulement après le chargement complet de la page
+    window.addEventListener('load', function() {
+      import('https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.15.2/dist/index.esm.js')
+        .then(function(module) {
+          var loader = new module.Loader({
+            apiKey: 'AIzaSyD8TMnCaMzm_nt9uVI6aOqfYJM35k9mPB8',
+            version: 'weekly',
+            libraries: ['places']
+          });
+          return loader.load();
+        })
+        .then(function() { initGBRating(); })
+        .catch(function(err) { console.error(err); displayFallbackRating(); });
+    });
     </script>
     
     <footer>
