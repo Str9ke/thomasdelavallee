@@ -40,7 +40,7 @@
         "addressCountry": "BE"
       },
       "url": "https://kineleuze-thomasdelavallee.be",
-      "priceRange": "30",
+      "priceRange": "€",
       "openingHours": "Mo-Fr 08:00-19:00",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -56,12 +56,33 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Thomas Delavallée – Kinésithérapeute à Leuze-en-Hainaut",
-      "url": "https://kineleuze-thomasdelavallee.be/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://kineleuze-thomasdelavallee.be/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://kineleuze-thomasdelavallee.be/"
+    }
+    </script>
+    
+    <!-- JSON-LD FAQ Schema pour rich snippets Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel document apporter chez le kinésithérapeute ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Carte d'identité, prescription médicale, examens, protocole opératoire, police d'assurance, tout ce qui peut aider à vous soigner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les tarifs du kinésithérapeute en 2026 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Au cabinet : 31,64€ (remboursement ordinaire 25,39€, BIM 29,14€). À domicile : 34,81€ (remboursement ordinaire 28,56€, BIM 32,31€). Frais de dossier pathologie normale : 7,38€. Frais de dossier pathologie lourde : 35,56€."
+          }
+        }
+      ]
     }
     </script>
     
@@ -823,15 +844,27 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://maps.googleapis.com;
-      connect-src 'self' https://maps.googleapis.com https://places.googleapis.com;
+      script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://maps.googleapis.com https://www.googletagmanager.com;
+      connect-src 'self' https://maps.googleapis.com https://places.googleapis.com https://www.google-analytics.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src https://fonts.gstatic.com;
       img-src 'self' data:;
       frame-src https://*.google.com https://*.googleapis.com;
     ">
+  <!-- En-têtes de sécurité via meta -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   </head>
   <body>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KF2LDM8P');</script>
+    <!-- End Google Tag Manager -->
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF2LDM8P" height="0" width="0" style="display:none;visibility:hidden"></iframe>
